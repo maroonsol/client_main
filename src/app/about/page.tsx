@@ -51,34 +51,34 @@ const technologies = [
 
 const milestones = [
   {
-    year: "2020",
-    title: "Company Founded",
-    description: "MaroonSol was established with a vision to provide innovative digital solutions."
+    year: "2019",
+    title: "Freelancer Journey Begins",
+    description: "Started working as freelancers under the MaroonSol name, delivering innovative digital solutions to clients."
   },
   {
-    year: "2021",
+    year: "2020",
     title: "First Major Project",
     description: "Successfully delivered our first large-scale e-commerce platform for AOAC."
   },
   {
-    year: "2022",
+    year: "2021",
     title: "Team Expansion",
     description: "Grew our team and expanded our service offerings to include mobile development."
   },
   {
-    year: "2023",
+    year: "2022",
     title: "Industry Recognition",
     description: "Received recognition for excellence in digital transformation solutions."
   },
   {
-    year: "2024",
+    year: "2023",
     title: "Global Reach",
     description: "Expanded our client base internationally and launched advanced AI-powered solutions."
   },
   {
     year: "2025",
-    title: "Future Vision",
-    description: "Continuing to innovate and lead in the digital technology space."
+    title: "Company Registration",
+    description: "Officially registered as MaroonSol Private Limited Company, marking a new chapter in our growth."
   }
 ];
 
@@ -111,17 +111,20 @@ export default function About() {
                 {companyInfo.description}
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Founded with a vision to bridge the gap between technology and business needs, 
-                MaroonSol has grown from a small startup to a trusted partner for companies 
-                across various industries. Our journey has been marked by continuous learning, 
-                innovation, and an unwavering commitment to delivering exceptional results.
+                Our journey began in 2019 when we started working as freelancers under the MaroonSol name, 
+                driven by a vision to bridge the gap between technology and business needs. What started 
+                as a small freelance operation has grown into a trusted partner for companies across 
+                various industries. Our journey has been marked by continuous learning, innovation, 
+                and an unwavering commitment to delivering exceptional results.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Today, we stand as a leading digital technology company, helping businesses 
-                navigate the complexities of the digital landscape with confidence and clarity. 
-                Our team of expert developers, designers, and strategists work together to 
-                create solutions that not only meet current needs but also prepare businesses 
-                for future challenges.
+                In 2025, we took a significant step forward by officially registering as MaroonSol 
+                Private Limited Company, marking a new chapter in our growth and commitment to 
+                excellence. Today, we stand as a leading digital technology company, helping 
+                businesses navigate the complexities of the digital landscape with confidence 
+                and clarity. Our team of expert developers, designers, and strategists work 
+                together to create solutions that not only meet current needs but also prepare 
+                businesses for future challenges.
               </p>
               <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/contact" className="flex items-center">
@@ -141,7 +144,7 @@ export default function About() {
                   <div className="text-muted-foreground">Happy Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-foreground mb-2">5+</div>
+                  <div className="text-4xl font-bold text-foreground mb-2">6+</div>
                   <div className="text-muted-foreground">Years Experience</div>
                 </div>
                 <div className="text-center">
