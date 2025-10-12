@@ -372,7 +372,7 @@ export const clients: Client[] = [
   {
     id: "artistry-clique",
     name: "Artistry Clique",
-    logo: "/client/logo/artistry-clique.png",
+    logo: "/client/logo/artistryclique.png",
     category: "Art",
     website: "https://www.artistryclique.com/",
     description: "A vibrant online platform for artists to showcase their talent, participate in competitions, and connect with a creative community. Features online art competitions, curated artisan products, and artist portfolio services.",
