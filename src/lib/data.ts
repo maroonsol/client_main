@@ -368,12 +368,68 @@ export const clients: Client[] = [
         icon: "Palette"
       }
     ]
+  },
+  {
+    id: "artistry-clique",
+    name: "Artistry Clique",
+    logo: "/client/logo/artistry-clique.png",
+    category: "Art",
+    website: "https://www.artistryclique.com/",
+    description: "A vibrant online platform for artists to showcase their talent, participate in competitions, and connect with a creative community. Features online art competitions, curated artisan products, and artist portfolio services.",
+    projects: [
+      {
+        id: "advanced-website",
+        title: "Advanced Website Development",
+        description: "A sophisticated e-commerce and community platform with modern design and comprehensive functionality",
+        features: [
+          "Modern Responsive Design",
+          "E-commerce Integration",
+          "Artist Portfolio System",
+          "Community Features",
+          "Blog Management",
+          "SEO Optimization"
+        ],
+        technologies: ["React", "Node.js", "E-commerce Platform", "CMS", "Modern UI/UX"],
+        icon: "Globe"
+      },
+      {
+        id: "graphics-designing",
+        title: "Graphics Designing Services",
+        description: "Comprehensive graphics design solutions for branding and marketing materials",
+        features: [
+          "Logo Design",
+          "Brand Identity",
+          "Marketing Materials",
+          "Digital Graphics",
+          "Print Design",
+          "Visual Communication"
+        ],
+        technologies: ["Adobe Creative Suite", "Design Tools", "Brand Development"],
+        icon: "Palette"
+      },
+      {
+        id: "event-competition-system",
+        title: "Online Event/Competition Organizing System",
+        description: "Advanced system for organizing online art competitions with automatic certificate generation",
+        features: [
+          "Event Registration System",
+          "Competition Management",
+          "Automatic Certificate Generation",
+          "Result Declaration",
+          "Participant Tracking",
+          "Submission Management"
+        ],
+        technologies: ["Event Management", "Certificate Generation", "Automation", "Database Integration"],
+        icon: "Award"
+      }
+    ]
   }
 ];
 
 export const categories = [
   "All",
   "Agriculture",
+  "Art",
   "Environment",
   "Health",
   "Photography"
