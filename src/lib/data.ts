@@ -44,7 +44,7 @@ export const companyInfo: CompanyInfo = {
   sdescription: "A leading digital technology company specializing in custom software development and web applications. We deliver innovative, scalable solutions that drive business growth.",
   contact: {
     phone: "+91 9305166411",
-    email: "work@maroonsol.com",
+    email: "info@maroonsol.com",
     address: "Khairatali, Mittan Chak, Patna, Patna Sadar, Bihar, India, 804453"
   }
 };
@@ -328,6 +328,46 @@ export const clients: Client[] = [
         icon: "Share"
       }
     ]
+  },
+  {
+    id: "adira-bio-cycle",
+    name: "Adira Bio Cycle",
+    logo: "/client/logo/adira.png",
+    category: "Environment",
+    website: "https://www.adirabiocycle.in/",
+    description: "Environmental organization focused on sustainable bio-cycle solutions and environmental conservation initiatives.",
+    projects: [
+      {
+        id: "advanced-website",
+        title: "Advanced Website Development",
+        description: "A sophisticated website with modern design and comprehensive functionality",
+        features: [
+          "Modern Responsive Design",
+          "Advanced User Interface",
+          "Content Management System",
+          "Interactive Features",
+          "SEO Optimization",
+          "Performance Optimization"
+        ],
+        technologies: ["React", "Node.js", "Modern UI/UX", "CMS", "SEO Tools"],
+        icon: "Globe"
+      },
+      {
+        id: "graphics-designing",
+        title: "Graphics Designing Services",
+        description: "Comprehensive graphics design solutions for branding and marketing materials",
+        features: [
+          "Logo Design",
+          "Brand Identity",
+          "Marketing Materials",
+          "Digital Graphics",
+          "Print Design",
+          "Visual Communication"
+        ],
+        technologies: ["Adobe Creative Suite", "Design Tools", "Brand Development"],
+        icon: "Palette"
+      }
+    ]
   }
 ];
 
@@ -343,6 +383,7 @@ export const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Clients", href: "/clients" },
   { name: "Contact", href: "/contact" }
 ];

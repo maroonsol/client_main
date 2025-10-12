@@ -21,9 +21,9 @@ export default function Header() {
                 <Phone className="w-4 h-4 mr-1" />
                 +91 9305166411
               </a>
-              <a href="mailto:work@maroonsol.com" className="flex items-center hover:text-muted-foreground transition-colors">
+              <a href="mailto:info@maroonsol.com" className="flex items-center hover:text-muted-foreground transition-colors">
                 <Mail className="w-4 h-4 mr-1" />
-                work@maroonsol.com
+                info@maroonsol.com
               </a>
             </div>
             <div className="hidden md:flex items-center space-x-4">

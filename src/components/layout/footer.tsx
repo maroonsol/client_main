@@ -36,7 +36,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200"
+                    className="text-muted-foreground hover:text-white transition-colors duration-200"
                   >
                     <IconComponent className="w-5 h-5" />
                   </a>
@@ -53,7 +53,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                    className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -62,40 +62,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Policies */}
           <div className="space-y-4">
-            <h3 className="text-lg text-secondary-foreground font-semibold">Our Services</h3>
+            <h3 className="text-lg text-secondary-foreground font-semibold">Policies</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/services#website-development"
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                  href="/docs/termsandcondition"
+                  className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                 >
-                  Website Development
+                  Terms and Conditions
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services#custom-software"
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                  href="/docs/privacy"
+                  className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                 >
-                  Custom Software
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#online-software"
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
-                >
-                  Online Software
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#prebuilt-software"
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
-                >
-                  Prebuilt Software
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -109,7 +93,7 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                 <a
                   href={`tel:${companyInfo.contact.phone}`}
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                  className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                 >
                   {companyInfo.contact.phone}
                 </a>
@@ -118,7 +102,7 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                 <a
                   href={`mailto:${companyInfo.contact.email}`}
-                  className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                  className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                 >
                   {companyInfo.contact.email}
                 </a>
@@ -141,16 +125,16 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               <Link
-                href="/privacy"
-                className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                href="/docs/privacy"
+                className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
               >
                 Privacy Policy
               </Link>
               <Link
-                href="/terms"
-                className="text-muted-foreground hover:text-primary-foreground transition-colors duration-200 text-sm"
+                href="/docs/termsandcondition"
+                className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
               >
-                Terms of Service
+                Terms and Conditions
               </Link>
             </div>
           </div>
