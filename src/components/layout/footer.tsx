@@ -82,6 +82,14 @@ export default function Footer() {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/docs/refund"
+                  className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
+                >
+                  Refund & Cancellation Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -135,6 +143,12 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
               >
                 Terms and Conditions
+              </Link>
+              <Link
+                href="/docs/refund"
+                className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
+              >
+                Refund Policy
               </Link>
             </div>
           </div>
