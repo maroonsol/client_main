@@ -20,6 +20,11 @@ const docsPages = [
     href: '/docs/privacy',
     icon: Shield,
   },
+  {
+    title: 'Refund Policy',
+    href: '/docs/refund',
+    icon: Shield,
+  },
 ];
 
 export default function DocsLayout({ children }: DocsLayoutProps) {

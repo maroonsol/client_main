@@ -8,8 +8,7 @@ export default function PrivacyPolicyPage() {
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Privacy Policy</h1>
           <div className="text-sm text-muted-foreground space-y-1">
-            <p><strong>Effective Date:</strong> [Insert Date]</p>
-            <p><strong>Last Updated:</strong> [Insert Date]</p>
+          <p><strong>Last Updated:</strong> September 20, 2025</p>
           </div>
         </header>
 

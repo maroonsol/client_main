@@ -8,7 +8,7 @@ export default function RefundPolicyPage() {
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">Refund & Cancellation Policy</h1>
           <div className="text-sm text-muted-foreground space-y-1">
-            <p><strong>Last Updated:</strong> January 15, 2025</p>
+            <p><strong>Last Updated:</strong> September 20, 2025</p>
           </div>
         </header>
 
