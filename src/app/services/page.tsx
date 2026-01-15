@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { services } from "@/lib/data";
+import { serviceCategories } from "@/lib/data";
 import { 
   Globe, 
   Code, 
@@ -19,7 +19,21 @@ import {
   Search,
   BarChart3,
   Settings,
-  Headphones
+  Headphones,
+  Cpu,
+  Layout,
+  Sparkles,
+  Monitor,
+  LayoutGrid,
+  PenTool,
+  Layers,
+  Briefcase,
+  Building2,
+  Receipt,
+  BadgeCheck,
+  FileText,
+  ShieldCheck,
+  LineChart
 } from "lucide-react";
 import Link from "next/link";
 
@@ -28,58 +42,39 @@ const iconMap = {
   Code,
   Cloud,
   Package,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Users,
+  Shield,
+  Zap,
+  Smartphone,
+  Database,
+  Palette,
+  Search,
+  BarChart3,
+  Settings,
+  Headphones,
+  Cpu,
+  Layout,
+  Sparkles,
+  Monitor,
+  LayoutGrid,
+  PenTool,
+  Layers,
+  Briefcase,
+  Building2,
+  Receipt,
+  BadgeCheck,
+  FileText,
+  ShieldCheck,
+  LineChart
 };
 
-const additionalServices = [
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications for iOS and Android",
-    features: ["React Native", "Flutter", "Native iOS/Android", "App Store Optimization", "Push Notifications", "Offline Support"],
-    duration: "8-16 weeks",
-    price: "Starting from ₹2,50,000"
-  },
-  {
-    icon: Database,
-    title: "Database Design & Management",
-    description: "Robust database solutions for optimal performance and scalability",
-    features: ["Database Architecture", "Performance Optimization", "Data Migration", "Backup & Recovery", "Security", "Monitoring"],
-    duration: "2-6 weeks",
-    price: "Starting from ₹75,000"
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Beautiful and intuitive user interfaces that enhance user experience",
-    features: ["User Research", "Wireframing", "Prototyping", "Visual Design", "Usability Testing", "Design Systems"],
-    duration: "3-8 weeks",
-    price: "Starting from ₹1,00,000"
-  },
-  {
-    icon: Search,
-    title: "SEO & Digital Marketing",
-    description: "Comprehensive digital marketing strategies to boost your online presence",
-    features: ["SEO Optimization", "Content Marketing", "Social Media", "PPC Campaigns", "Analytics", "Conversion Optimization"],
-    duration: "Ongoing",
-    price: "Starting from ₹25,000/month"
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Data-driven insights and comprehensive reporting solutions",
-    features: ["Google Analytics", "Custom Dashboards", "KPI Tracking", "Data Visualization", "Automated Reports", "Business Intelligence"],
-    duration: "2-4 weeks",
-    price: "Starting from ₹50,000"
-  },
-  {
-    icon: Settings,
-    title: "System Integration",
-    description: "Seamless integration of various systems and third-party services",
-    features: ["API Development", "Third-party Integrations", "Legacy System Migration", "Data Synchronization", "Workflow Automation", "System Monitoring"],
-    duration: "4-12 weeks",
-    price: "Starting from ₹1,50,000"
-  }
-];
+const getIcon = (iconName: string) => {
+  const IconComponent = iconMap[iconName as keyof typeof iconMap];
+  return IconComponent || Globe;
+};
 
 const processSteps = [
   {
@@ -118,141 +113,82 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-background via-background to-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Our Services
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive digital technology solutions designed to transform your business and drive growth in the digital age.
+              Discover our three core categories: Tech, Design, and Business. Everything you need to build, grow, and scale.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {serviceCategories.map((category) => {
+                const IconComponent = getIcon(category.icon);
+                return (
+                  <span key={category.id} className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-2 text-sm text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60">
+                    <IconComponent className="h-4 w-4 text-primary" />
+                    {category.title}
+                  </span>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Services */}
+      {/* Service Categories */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Core Services
+              Service Categories
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our primary service offerings that form the foundation of our digital solutions.
+              Choose a category to explore tailored offerings with clear deliverables.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => {
-              const IconComponent = iconMap[service.icon as keyof typeof iconMap];
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {serviceCategories.map((category) => {
+              const IconComponent = getIcon(category.icon);
               return (
-                <Card key={service.id} id={service.id} className="group hover:shadow-xl transition-all duration-300 border-border hover:border-gray-300">
+                <Card key={category.id} className="group relative overflow-hidden border-border bg-gradient-to-br from-background to-muted/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/40">
+                  <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition-opacity duration-300 group-hover:opacity-80" />
                   <CardHeader>
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-gray-100 rounded-full group-hover:bg-primary transition-colors duration-300">
-                        <IconComponent className="w-8 h-8 text-gray-700 group-hover:text-primary-foreground transition-colors duration-300" />
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="p-3 bg-muted rounded-full group-hover:bg-primary transition-colors duration-300">
+                          <IconComponent className="w-8 h-8 text-muted-foreground group-hover:text-primary-foreground transition-colors duration-300" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-2xl font-semibold text-foreground">
+                            {category.title}
+                          </CardTitle>
+                          <CardDescription className="text-muted-foreground text-base">
+                            {category.description}
+                          </CardDescription>
+                        </div>
                       </div>
-                      <div>
-                        <CardTitle className="text-2xl font-semibold text-foreground">
-                          {service.title}
-                        </CardTitle>
-                        <CardDescription className="text-muted-foreground text-base">
-                          {service.description}
-                        </CardDescription>
-                      </div>
+                      <Badge variant="secondary" className="text-xs">
+                        {category.services.length} services
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <div>
-                        <h4 className="font-medium text-foreground mb-3">Key Features:</h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {service.features.map((feature, index) => (
-                            <div key={index} className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                              {feature}
-                            </div>
-                          ))}
-                        </div>
+                      <div className="flex flex-wrap gap-2">
+                        {category.services.slice(0, 4).map((service) => (
+                          <Badge key={service.id} variant="outline" className="text-xs">
+                            {service.title}
+                          </Badge>
+                        ))}
                       </div>
-                      <div className="flex items-center justify-between pt-4 border-t border-border">
-                        <div className="text-sm text-gray-500">
-                          <div className="flex items-center">
-                            <Clock className="w-4 h-4 mr-1" />
-                            4-12 weeks
-                          </div>
-                        </div>
-                        <Button asChild className="bg-primary hover:bg-gray-800 text-primary-foreground">
-                          <Link href="/contact" className="flex items-center">
-                            Get Quote
-                            <ArrowRight className="w-4 h-4 ml-2" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Services */}
-      <section className="py-20 bg-muted/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Additional Services
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Specialized services to complement your digital transformation journey.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-border hover:border-gray-300">
-                  <CardHeader>
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="p-2 bg-gray-100 rounded-lg group-hover:bg-primary transition-colors duration-300">
-                        <IconComponent className="w-6 h-6 text-gray-700 group-hover:text-primary-foreground transition-colors duration-300" />
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-foreground">
-                        {service.title}
-                      </CardTitle>
-                    </div>
-                    <CardDescription className="text-muted-foreground">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-medium text-foreground mb-2 text-sm">Features:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {service.features.slice(0, 4).map((feature, featureIndex) => (
-                            <Badge key={featureIndex} variant="secondary" className="text-xs">
-                              {feature}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="space-y-2 pt-2 border-t border-border">
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground">Duration:</span>
-                          <span className="font-medium">{service.duration}</span>
-                        </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-muted-foreground">Price:</span>
-                          <span className="font-medium text-green-600">{service.price}</span>
-                        </div>
-                      </div>
-                      <Button asChild variant="outline" className="w-full border-black text-black hover:bg-primary hover:text-primary-foreground">
-                        <Link href="/contact">Learn More</Link>
+                      <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                        <Link href={`#${category.id}`} className="flex items-center justify-center">
+                          Explore {category.title}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                       </Button>
                     </div>
                   </CardContent>
@@ -262,6 +198,101 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* Category Details */}
+      {serviceCategories.map((category, index) => {
+        const IconComponent = getIcon(category.icon);
+        const sectionBackground = index % 2 === 0 ? "bg-muted/10" : "bg-background";
+        return (
+          <section key={category.id} id={category.id} className={`py-20 ${sectionBackground}`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <div>
+                  <div className="inline-flex items-center gap-3 rounded-full border border-border bg-background px-4 py-2 text-sm text-muted-foreground shadow-sm">
+                    <IconComponent className="h-4 w-4 text-primary" />
+                    {category.title}
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-4 mb-3">
+                    {category.title}
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl">
+                    {category.description}
+                  </p>
+                </div>
+                <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Link href="/contact" className="flex items-center">
+                    Get Started
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                {category.services.map((service) => {
+                  const ServiceIcon = getIcon(service.icon);
+                  return (
+                    <Card key={service.id} className="group border-border bg-background/80 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/40">
+                      <CardHeader>
+                        <div className="flex items-center space-x-3 mb-2">
+                          <div className="p-2 bg-muted rounded-lg group-hover:bg-primary transition-colors duration-300">
+                            <ServiceIcon className="w-6 h-6 text-muted-foreground group-hover:text-primary-foreground transition-colors duration-300" />
+                          </div>
+                          <CardTitle className="text-lg font-semibold text-foreground">
+                            {service.title}
+                          </CardTitle>
+                        </div>
+                        <CardDescription className="text-muted-foreground">
+                          {service.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="font-medium text-foreground mb-2 text-sm">Key Features:</h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                              {service.features.slice(0, 6).map((feature, featureIndex) => (
+                                <div key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                                  {feature}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          {(service.duration || service.price) && (
+                            <div className="space-y-2 pt-2 border-t border-border text-sm">
+                              {service.duration && (
+                                <div className="flex items-center justify-between">
+                                  <span className="text-muted-foreground flex items-center gap-2">
+                                    <Clock className="w-4 h-4" />
+                                    Duration
+                                  </span>
+                                  <span className="font-medium">{service.duration}</span>
+                                </div>
+                              )}
+                              {service.price && (
+                                <div className="flex items-center justify-between">
+                                  <span className="text-muted-foreground">Price</span>
+                                  <span className="font-medium text-green-600">{service.price}</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          <Button asChild variant="outline" className="w-full border-border hover:bg-primary hover:text-primary-foreground">
+                            <Link href="/contact" className="flex items-center justify-center">
+                              Request Quote
+                              <ArrowRight className="w-4 h-4 ml-2" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* Our Process */}
       <section className="py-20 bg-background">

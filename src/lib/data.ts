@@ -23,6 +23,16 @@ export interface Service {
   description: string;
   features: string[];
   icon: string;
+  duration?: string;
+  price?: string;
+}
+
+export interface ServiceCategory {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  services: Service[];
 }
 
 export interface CompanyInfo {
@@ -49,62 +59,354 @@ export const companyInfo: CompanyInfo = {
   }
 };
 
-export const services: Service[] = [
+export const serviceCategories: ServiceCategory[] = [
   {
-    id: "website-development",
-    title: "Website Development",
-    description: "Custom websites built with modern technologies and responsive design",
-    features: [
-      "Responsive Design",
-      "SEO Optimization",
-      "Fast Loading",
-      "Mobile Friendly",
-      "Admin Panel",
-      "Content Management"
-    ],
-    icon: "Globe"
+    id: "tech",
+    title: "Tech Services",
+    description: "End-to-end technology solutions that power modern businesses.",
+    icon: "Cpu",
+    services: [
+      {
+        id: "website-development",
+        title: "Website Development",
+        description: "Custom websites built with modern technologies and responsive design",
+        features: [
+          "Responsive Design",
+          "SEO Optimization",
+          "Fast Loading",
+          "Mobile Friendly",
+          "Admin Panel",
+          "Content Management"
+        ],
+        icon: "Globe",
+        duration: "4-8 weeks"
+      },
+      {
+        id: "custom-software",
+        title: "Custom Software",
+        description: "Tailored software solutions designed to meet your specific business needs",
+        features: [
+          "Custom Development",
+          "Scalable Architecture",
+          "Database Design",
+          "API Integration",
+          "Security Features",
+          "Maintenance Support"
+        ],
+        icon: "Code",
+        duration: "6-16 weeks"
+      },
+      {
+        id: "online-software",
+        title: "Online Software",
+        description: "Cloud-based software solutions accessible from anywhere, anytime",
+        features: [
+          "Cloud Hosting",
+          "Real-time Collaboration",
+          "Data Backup",
+          "Multi-user Access",
+          "API Integration",
+          "24/7 Availability"
+        ],
+        icon: "Cloud",
+        duration: "6-12 weeks"
+      },
+      {
+        id: "prebuilt-software",
+        title: "Prebuilt Software",
+        description: "Ready-to-use software solutions for common business requirements",
+        features: [
+          "Quick Deployment",
+          "Cost Effective",
+          "Proven Solutions",
+          "Easy Customization",
+          "Training Support",
+          "Regular Updates"
+        ],
+        icon: "Package",
+        duration: "2-6 weeks"
+      },
+      {
+        id: "mobile-apps",
+        title: "Mobile App Development",
+        description: "Native and cross-platform mobile applications for iOS and Android",
+        features: [
+          "React Native",
+          "Flutter",
+          "Native iOS/Android",
+          "App Store Optimization",
+          "Push Notifications",
+          "Offline Support"
+        ],
+        icon: "Smartphone",
+        duration: "8-16 weeks",
+        price: "Starting from ₹2,50,000"
+      },
+      {
+        id: "database-management",
+        title: "Database Design & Management",
+        description: "Robust database solutions for optimal performance and scalability",
+        features: [
+          "Database Architecture",
+          "Performance Optimization",
+          "Data Migration",
+          "Backup & Recovery",
+          "Security",
+          "Monitoring"
+        ],
+        icon: "Database",
+        duration: "2-6 weeks",
+        price: "Starting from ₹75,000"
+      },
+      {
+        id: "ui-ux",
+        title: "UI/UX Design",
+        description: "Beautiful and intuitive user interfaces that enhance user experience",
+        features: [
+          "User Research",
+          "Wireframing",
+          "Prototyping",
+          "Visual Design",
+          "Usability Testing",
+          "Design Systems"
+        ],
+        icon: "Layout",
+        duration: "3-8 weeks",
+        price: "Starting from ₹1,00,000"
+      },
+      {
+        id: "digital-marketing",
+        title: "SEO & Digital Marketing",
+        description: "Comprehensive digital marketing strategies to boost your online presence",
+        features: [
+          "SEO Optimization",
+          "Content Marketing",
+          "Social Media",
+          "PPC Campaigns",
+          "Analytics",
+          "Conversion Optimization"
+        ],
+        icon: "Search",
+        duration: "Ongoing",
+        price: "Starting from ₹25,000/month"
+      },
+      {
+        id: "analytics-reporting",
+        title: "Analytics & Reporting",
+        description: "Data-driven insights and comprehensive reporting solutions",
+        features: [
+          "Google Analytics",
+          "Custom Dashboards",
+          "KPI Tracking",
+          "Data Visualization",
+          "Automated Reports",
+          "Business Intelligence"
+        ],
+        icon: "BarChart3",
+        duration: "2-4 weeks",
+        price: "Starting from ₹50,000"
+      },
+      {
+        id: "system-integration",
+        title: "System Integration",
+        description: "Seamless integration of various systems and third-party services",
+        features: [
+          "API Development",
+          "Third-party Integrations",
+          "Legacy System Migration",
+          "Data Synchronization",
+          "Workflow Automation",
+          "System Monitoring"
+        ],
+        icon: "Settings",
+        duration: "4-12 weeks",
+        price: "Starting from ₹1,50,000"
+      }
+    ]
   },
   {
-    id: "custom-software",
-    title: "Custom Software",
-    description: "Tailored software solutions designed to meet your specific business needs",
-    features: [
-      "Custom Development",
-      "Scalable Architecture",
-      "Database Design",
-      "API Integration",
-      "Security Features",
-      "Maintenance Support"
-    ],
-    icon: "Code"
+    id: "design",
+    title: "Design Services",
+    description: "Visual storytelling that builds brands and elevates user experience.",
+    icon: "Palette",
+    services: [
+      {
+        id: "digital-graphics",
+        title: "Digital Graphics",
+        description: "High-impact creatives for campaigns, social media, and ads.",
+        features: [
+          "Social Media Creatives",
+          "Ad Banners",
+          "Presentation Decks",
+          "Infographics",
+          "Illustrations",
+          "Motion Assets"
+        ],
+        icon: "Sparkles"
+      },
+      {
+        id: "website-designing",
+        title: "Website Designing",
+        description: "Modern, conversion-focused website and landing page designs.",
+        features: [
+          "UI Layouts",
+          "Responsive Designs",
+          "Landing Pages",
+          "Design Systems",
+          "Interactive Prototypes",
+          "Accessibility"
+        ],
+        icon: "Monitor"
+      },
+      {
+        id: "packaging-design",
+        title: "Packaging Designing",
+        description: "Packaging that stands out on shelves and tells your brand story.",
+        features: [
+          "Product Packaging",
+          "Label Design",
+          "Print Ready Files",
+          "Mockups",
+          "Brand Compliance",
+          "Material Guidance"
+        ],
+        icon: "Package"
+      },
+      {
+        id: "ui-design",
+        title: "UI Designing",
+        description: "Pixel-perfect interfaces with clear visual hierarchy.",
+        features: [
+          "Component Libraries",
+          "Design Tokens",
+          "Micro-interactions",
+          "Icon Systems",
+          "Developer Handoff",
+          "Design QA"
+        ],
+        icon: "LayoutGrid"
+      },
+      {
+        id: "brand-identity",
+        title: "Brand Identity",
+        description: "Complete visual identity to make your brand instantly recognizable.",
+        features: [
+          "Logo Design",
+          "Color & Typography",
+          "Brand Guidelines",
+          "Stationery",
+          "Social Kits",
+          "Brand Assets"
+        ],
+        icon: "PenTool"
+      },
+      {
+        id: "print-design",
+        title: "Print & Marketing Collateral",
+        description: "Professional print designs that support your marketing goals.",
+        features: [
+          "Brochures",
+          "Posters",
+          "Flyers",
+          "Business Cards",
+          "Packaging Inserts",
+          "Event Collateral"
+        ],
+        icon: "Layers"
+      }
+    ]
   },
   {
-    id: "online-software",
-    title: "Online Software",
-    description: "Cloud-based software solutions accessible from anywhere, anytime",
-    features: [
-      "Cloud Hosting",
-      "Real-time Collaboration",
-      "Data Backup",
-      "Multi-user Access",
-      "API Integration",
-      "24/7 Availability"
-    ],
-    icon: "Cloud"
-  },
-  {
-    id: "prebuilt-software",
-    title: "Prebuilt Software",
-    description: "Ready-to-use software solutions for common business requirements",
-    features: [
-      "Quick Deployment",
-      "Cost Effective",
-      "Proven Solutions",
-      "Easy Customization",
-      "Training Support",
-      "Regular Updates"
-    ],
-    icon: "Package"
+    id: "business",
+    title: "Business & Compliance",
+    description: "Registrations, filings, and documentation to keep you compliant.",
+    icon: "Briefcase",
+    services: [
+      {
+        id: "company-registration",
+        title: "Company Registration",
+        description: "Start your business with the right structure and registrations.",
+        features: [
+          "Private Limited",
+          "LLP Registration",
+          "Sole Proprietorship",
+          "Partnership Firm",
+          "DIN & DSC",
+          "Name Approval"
+        ],
+        icon: "Building2"
+      },
+      {
+        id: "gst-registration",
+        title: "GST Registration & Filings",
+        description: "Complete GST support from registration to monthly filings.",
+        features: [
+          "New Registration",
+          "GST Return Filing",
+          "Compliance Calendar",
+          "Input Tax Credit",
+          "Notice Handling",
+          "Reconciliation"
+        ],
+        icon: "Receipt"
+      },
+      {
+        id: "trademark-registration",
+        title: "Trademark Registration",
+        description: "Protect your brand with trademark search and filing support.",
+        features: [
+          "Trademark Search",
+          "Application Filing",
+          "Objection Handling",
+          "Renewal Support",
+          "Class Guidance",
+          "Documentation"
+        ],
+        icon: "BadgeCheck"
+      },
+      {
+        id: "documents-drafting",
+        title: "Documents Drafting",
+        description: "Professional drafting for all your legal and business needs.",
+        features: [
+          "Agreements",
+          "MOUs",
+          "Policies",
+          "Contracts",
+          "Legal Notices",
+          "Templates"
+        ],
+        icon: "FileText"
+      },
+      {
+        id: "compliance-filings",
+        title: "ROC & Compliance Filings",
+        description: "Ongoing compliance services to keep your business in good standing.",
+        features: [
+          "Annual Filings",
+          "Director Changes",
+          "Share Transfers",
+          "Statutory Registers",
+          "Minutes & Resolutions",
+          "Compliance Tracking"
+        ],
+        icon: "ShieldCheck"
+      },
+      {
+        id: "business-advisory",
+        title: "Business Advisory",
+        description: "Strategic guidance to streamline operations and growth.",
+        features: [
+          "Entity Structuring",
+          "Tax Planning",
+          "Process Setup",
+          "Funding Readiness",
+          "Policy Advisory",
+          "Operational Support"
+        ],
+        icon: "LineChart"
+      }
+    ]
   }
 ];
 
@@ -452,8 +754,8 @@ export const quickLinks = [
 ];
 
 export const socialLinks = [
-  { name: "LinkedIn", href: "#", icon: "Linkedin" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/maroonsol/", icon: "Linkedin" },
   { name: "Twitter", href: "#", icon: "Twitter" },
   { name: "Facebook", href: "#", icon: "Facebook" },
-  { name: "Instagram", href: "#", icon: "Instagram" }
+  { name: "Instagram", href: "https://www.instagram.com/maroonsol.company/", icon: "Instagram" }
 ];

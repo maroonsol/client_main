@@ -36,6 +36,8 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-white transition-colors duration-200"
                   >
                     <IconComponent className="w-5 h-5" />

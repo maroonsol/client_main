@@ -2,9 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { companyInfo, services, clients, categories } from "@/lib/data";
+import { companyInfo, serviceCategories, clients, categories } from "@/lib/data";
 import { 
   Globe, 
   Code, 
@@ -24,7 +25,25 @@ import {
   Activity,
   Camera,
   User,
-  Share
+  Share,
+  Cpu,
+  Palette,
+  Briefcase,
+  Sparkles,
+  Monitor,
+  LayoutGrid,
+  PenTool,
+  Layers,
+  Building2,
+  Receipt,
+  BadgeCheck,
+  FileText,
+  ShieldCheck,
+  LineChart,
+  Smartphone,
+  Database,
+  Search,
+  BarChart3
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +53,24 @@ const iconMap = {
   Code,
   Cloud,
   Package,
+  Cpu,
+  Palette,
+  Briefcase,
+  Sparkles,
+  Monitor,
+  LayoutGrid,
+  PenTool,
+  Layers,
+  Building2,
+  Receipt,
+  BadgeCheck,
+  FileText,
+  ShieldCheck,
+  LineChart,
+  Smartphone,
+  Database,
+  Search,
+  BarChart3,
   ShoppingCart,
   Settings,
   Calculator,
@@ -92,38 +129,38 @@ export default function Home() {
               Our Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We provide comprehensive digital technology solutions to help your business thrive in the digital age.
+              Explore our three specialized categories designed to support every stage of your growth.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => {
-              const IconComponent = iconMap[service.icon as keyof typeof iconMap];
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {serviceCategories.map((category) => {
+              const IconComponent = iconMap[category.icon as keyof typeof iconMap] || Globe;
               return (
-                <Card key={service.id} className="group hover:shadow-xl transition-all duration-300 border-border hover:border-primary/50">
+                <Card key={category.id} className="group relative overflow-hidden border-border bg-gradient-to-br from-background to-muted/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-primary/40">
+                  <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-primary/10 blur-2xl transition-opacity duration-300 group-hover:opacity-80" />
                   <CardHeader className="text-center">
                     <div className="mx-auto mb-4 p-3 bg-muted rounded-full group-hover:bg-primary transition-colors duration-300">
                       <IconComponent className="w-8 h-8 text-muted-foreground group-hover:text-primary-foreground transition-colors duration-300" />
                     </div>
                     <CardTitle className="text-xl font-semibold text-foreground">
-                      {service.title}
+                      {category.title}
                     </CardTitle>
                     <CardDescription className="text-muted-foreground">
-                      {service.description}
+                      {category.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
-                      {service.features.slice(0, 4).map((feature, index) => (
-                        <li key={index} className="flex items-center text-sm text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                          {feature}
-                        </li>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {category.services.slice(0, 4).map((service) => (
+                        <Badge key={service.id} variant="secondary" className="text-xs">
+                          {service.title}
+                        </Badge>
                       ))}
-                    </ul>
+                    </div>
                     <Button asChild variant="ghost" className="w-full mt-4 group-hover:bg-muted">
-                      <Link href="/services" className="flex items-center">
-                        Learn More
+                      <Link href={`/services#${category.id}`} className="flex items-center justify-center">
+                        Explore {category.title}
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                     </Button>
