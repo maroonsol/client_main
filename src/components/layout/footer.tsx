@@ -102,7 +102,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                 <a
-                  href={`tel:${companyInfo.contact.phone}`}
+                  href={`tel:${companyInfo.contact.phoneTel}`}
                   className="text-muted-foreground hover:text-white transition-colors duration-200 text-sm"
                 >
                   {companyInfo.contact.phone}

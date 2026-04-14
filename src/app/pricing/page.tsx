@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { companyInfo } from "@/lib/data";
 import { 
   Mail, 
   Truck, 
@@ -327,7 +328,7 @@ export default function PricingPage() {
               <a href="/contact">Contact Us</a>
             </Button>
             <Button asChild variant="outline" className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary py-3 px-8">
-              <a href="tel:+919305166411">Call Now</a>
+              <a href={`tel:${companyInfo.contact.phoneTel}`}>Call Now</a>
             </Button>
           </div>
         </div>

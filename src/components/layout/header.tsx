@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { navigationItems } from "@/lib/data";
+import { companyInfo, navigationItems } from "@/lib/data";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 export default function Header() {
@@ -17,13 +17,13 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
-              <a href="tel:+919305166411" className="flex items-center hover:text-muted-foreground transition-colors">
+              <a href={`tel:${companyInfo.contact.phoneTel}`} className="flex items-center hover:text-muted-foreground transition-colors">
                 <Phone className="w-4 h-4 mr-1" />
-                +91 9305166411
+                {companyInfo.contact.phone}
               </a>
-              <a href="mailto:info@maroonsol.com" className="flex items-center hover:text-muted-foreground transition-colors">
+              <a href={`mailto:${companyInfo.contact.email}`} className="flex items-center hover:text-muted-foreground transition-colors">
                 <Mail className="w-4 h-4 mr-1" />
-                info@maroonsol.com
+                {companyInfo.contact.email}
               </a>
             </div>
             <div className="hidden md:flex items-center space-x-4">

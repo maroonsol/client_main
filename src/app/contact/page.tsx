@@ -64,7 +64,7 @@ export default function Contact() {
       title: "Phone",
       description: "Call us for immediate assistance",
       value: companyInfo.contact.phone,
-      action: `tel:${companyInfo.contact.phone}`,
+      action: `tel:${companyInfo.contact.phoneTel}`,
       color: "text-green-600"
     },
     {
@@ -315,7 +315,7 @@ export default function Contact() {
                     For urgent inquiries or immediate assistance, please call us directly.
                   </p>
                   <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <a href={`tel:${companyInfo.contact.phone}`} className="flex items-center justify-center">
+                    <a href={`tel:${companyInfo.contact.phoneTel}`} className="flex items-center justify-center">
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now: {companyInfo.contact.phone}
                     </a>

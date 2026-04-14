@@ -42,6 +42,7 @@ export interface CompanyInfo {
   sdescription: string;
   contact: {
     phone: string;
+    phoneTel: string;
     email: string;
     address: string;
   };
@@ -53,7 +54,8 @@ export const companyInfo: CompanyInfo = {
   description: "We are a leading digital technology company specializing in custom software development, web applications, and comprehensive digital solutions. Our team of expert developers and designers work tirelessly to deliver innovative, scalable, and user-friendly solutions that drive business growth and success.",
   sdescription: "A leading digital technology company specializing in custom software development and web applications. We deliver innovative, scalable solutions that drive business growth.",
   contact: {
-    phone: "+91 9305166411",
+    phone: "(+91) 8252945156",
+    phoneTel: "+918252945156",
     email: "info@maroonsol.com",
     address: "Khairatali, Mittan Chak, Patna, Patna Sadar, Bihar, India, 804453"
   }
